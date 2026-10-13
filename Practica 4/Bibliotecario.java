@@ -1,4 +1,4 @@
-public class Bibliotecario extends Persona {
+/*public class Bibliotecario extends Persona {
 
     // Declaracion de atributos ---------------------------------------------------------------
 
@@ -15,3 +15,4 @@ public void eliminarLibro()
 @Override public void mostrarInformacion()
 
 // Declaracion de metodos especiales ------------------------------------------------------
+*/

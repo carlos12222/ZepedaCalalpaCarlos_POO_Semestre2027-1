@@ -7,6 +7,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Practica 2" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Practica 3" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Practica 4" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Herencia/Entregable" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/Herencia.zip" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

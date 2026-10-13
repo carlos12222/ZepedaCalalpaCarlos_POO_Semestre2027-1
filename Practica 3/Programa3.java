@@ -1,10 +1,10 @@
-import java.util.Scanner;
-/*
+/*import java.util.Scanner;
+
 En este programa vamos trabajar con StringBuffer, StringBuilder y Wrappers.
 Vamos a pedir el nombre y la edad del usuario y con StringBuffer vamos a agregar texto al nombre y con StringBuilder
 a invertir el nombre.
 También se usará Integer, que es el Wrapper de int.
-*/
+
 public class Programa1 {
     //Este método recibe el nombre y lo guarda en un StringBuffer.
     //Después se utiliza append para agregar "Estudiante" al final.
@@ -192,4 +192,4 @@ public class Programa3 {
     }
 }
     }
-}
+}*/
