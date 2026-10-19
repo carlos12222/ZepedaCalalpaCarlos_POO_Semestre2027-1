@@ -1,22 +1,30 @@
-package Practica4;
+/*Realizado por:
+    - Pérez Galindo Claudia
+    -Zepeda Calalpa Carlos
 
+-----------------------------------
+Funcionamiento general
+
+
+
+*/
 public class Libro {
     // Declaracion de atributos ---------------------------------------------------------------
 
     private String isbn;
     private String titulo;
     private String autor;
-    private int anioPublicacion;
+    private int publicacion;
     private boolean disponible;
 
     public Libro() {
     }
 
-    public Libro(String isbn, String titulo, String autor, int anioPublicacion, boolean disponible) {
+    public Libro(String isbn, String titulo, String autor, int publicacion, boolean disponible) {
         this.isbn = isbn;
         this.titulo = titulo;
         this.autor = autor;
-        this.anioPublicacion = anioPublicacion;
+        this.publicacion = publicacion;
         this.disponible = disponible;
     }
 
@@ -44,15 +52,15 @@ public class Libro {
         this.autor = autor;
     }
 
-    public int getAnioPublicacion() {
-        return anioPublicacion;
+    public int getPublicacion() {
+        return publicacion;
     }
 
-    public void setAnioPublicacion(int anioPublicacion) {
-        this.anioPublicacion = anioPublicacion;
+    public void setPublicacionublicacion(int anioPublicacion) {
+        this.publicacion = anioPublicacion;
     }
 
-    public boolean isDisponible() {
+    public boolean estaDisponible() {
         return disponible;
     }
 
@@ -60,14 +68,18 @@ public class Libro {
         this.disponible = disponible;
     }
 
-    @Override
-    public String toString() {
-        return "Libro{" +
-                "isbn='" + isbn + '\'' +
-                ", titulo='" + titulo + '\'' +
-                ", autor='" + autor + '\'' +
-                ", anioPublicacion=" + anioPublicacion +
-                ", disponible=" + disponible +
-                '}';
+
+    public void mostrarInformacion() {
+        System.out.println("--- Datos del Libro ---");
+        System.out.println("ISBN: " + this.isbn);
+        System.out.println("Título: " + this.titulo);
+        System.out.println("Autor: " + this.autor);
+        System.out.println("Año de publicación: " + this.publicacion);
+
+        if (this.disponible) {
+            System.out.println("Estado: Disponible ");
+        } else {
+            System.out.println("Estado: Aqui no ta");
+        }
     }
 }
