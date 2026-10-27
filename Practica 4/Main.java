@@ -1,10 +1,11 @@
 /*Realizado por:
     - Pérez Galindo Claudia
-    -Zepeda Calalpa Carlos
+    - Zepeda Calalpa Carlos
 -----------------------------------
 Funcionamiento general
-
-    Probador, ya no se q no jala basta
+    Este es el probador principal, aquí se instancia la clase Biblioteca
+    para gestionar el registro de libros, de usuarios y la ejecución
+    de los préstamos
 */
 
 public class Main {
@@ -13,38 +14,43 @@ public class Main {
 
     public static void main(String[] args) {
 
+        Biblioteca miBiblioteca;
+        Libro libro1;
+        Libro libro2;
+        Libro libro3;
+        Usuario usuario1;
+        Usuario usuario2;
+
         System.out.println("---------- ");
 
-        System.out.println("\n--- Registro de Libros ---");
-        Libro libro1 = new Libro("111", "Java Básico", "Autor A", 2021, true);
-        Libro libro2 = new Libro("222", "Clean Code", "Robert C. Martin", 2008, true);
-        Libro libro3 = new Libro("333", "Patrones de Diseño", "GoF", 1994, true);
+        miBiblioteca = new Biblioteca();
 
-        System.out.println("Libros registrados:");
-        System.out.println(libro1.getTitulo());
-        System.out.println(libro2.getTitulo());
-        System.out.println(libro3.getTitulo());
+        System.out.println("\n--- Registro de Libros ---");
+        libro1 = new Libro("111", "La casa de los espíritus", "Isabel Allende", 1982, true);
+        libro2 = new Libro("222", "Eva Luna", "Isabel Allende", 1987, true);
+        libro3 = new Libro("333", "De amor y de sombra", "Isabel Allende", 1984, true);
+
+        miBiblioteca.agregarLibro(libro1);
+        miBiblioteca.agregarLibro(libro2);
+        miBiblioteca.agregarLibro(libro3);
+
+        miBiblioteca.mostrarCatalogo();
 
         System.out.println("\n--- Registro de Usuarios ---");
-        Usuario usuario1 = new Usuario(1, "Juan Pérez", "juan@unam.mx", true);
-        Usuario usuario2 = new Usuario(2, "María Gómez", "maria@unam.mx", true);
+        usuario1 = new Usuario(1, "Gabriel García Márquez", "gabo@unam.mx", true);
+        usuario2 = new Usuario(2, "Julio Cortázar", "julio@unam.mx", true);
 
-        System.out.println("Usuarios registrados:");
-        System.out.println(usuario1.getNombre());
-        System.out.println(usuario2.getNombre());
+        miBiblioteca.registrarUsuario(usuario1);
+        miBiblioteca.registrarUsuario(usuario2);
 
         System.out.println("\n--- Solicitud de Préstamo ---");
-        Prestamo prestamoJuan = new Prestamo(usuario1, libro2);
-        prestamoJuan.iniciarPrestamo();
 
-        System.out.println("¿Libro disponible?: " + libro2.estaDisponible());
-        System.out.println("¿Préstamo activo?: " + prestamoJuan.estaActivo());
+        miBiblioteca.realizarPrestamo(usuario1, libro2);
+        miBiblioteca.mostrarPrestamosActivos();
 
-        System.out.println("\n--- Devolución de Libro ---");
-        prestamoJuan.finalizarPrestamo();
-
-        System.out.println("¿Libro disponible?: " + libro2.estaDisponible());
-        System.out.println("¿Préstamo activo?: " + prestamoJuan.estaActivo());
+        System.out.println("\n--- Probando Búsquedas ---");
+        System.out.println("Buscando el libro 222: " + miBiblioteca.buscarLibro("222").getTitulo());
+        System.out.println("Buscando al usuario 1: " + miBiblioteca.buscarUsuario(1).getNombre());
 
     }
 }

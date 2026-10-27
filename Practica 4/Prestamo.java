@@ -1,9 +1,12 @@
 /*Realizado por:
     - Pérez Galindo Claudia
-    -Zepeda Calalpa Carlos
+    - Zepeda Calalpa Carlos
 -----------------------------------
 Funcionamiento general
-    Es lo q se necesita para q prestemos jajaja
+    Esta clase maneja los préstamos de la biblioteca, registra qué usuario
+    se lleva qué libro, guarda las fechas de préstamo y devolución, y se
+    encarga de actualizar los datos de ambos cuando el libro se entrega
+    o se regresa
 */
 
 public class Prestamo {
@@ -28,24 +31,37 @@ public class Prestamo {
 
     // Declaracion de métodos -----------------------------------------------------------------
 
+    /*
+    -----------------------------------
+    iniciarPrestamo
+        Verifica si el libro está libre. Si lo está, le avisa al libro que
+        fue prestado, le suma un libro al usuario y activa el préstamo
+        guardando la fecha actual.
+    */
     public void iniciarPrestamo() {
         if (libro.estaDisponible()) {
             libro.prestar();
             usuario.solicitarPrestamo();
             this.activo = true;
-            this.fechaPrestamo = "00-00-2026";
+            this.fechaPrestamo = "26-10-2026";
             System.out.println("Préstamo iniciado.");
         } else {
             System.out.println("El libro no está disponible.");
         }
     }
 
+    /*
+    -----------------------------------
+    finalizarPrestamo
+        Comprueba si el préstamo está en curso. Si es así, le avisa al libro
+        que ya regresó, le resta el libro al usuario y cierra el préstamo.
+    */
     public void finalizarPrestamo() {
         if (this.activo) {
             libro.devolver();
             usuario.devolverLibro();
             this.activo = false;
-            this.fechaDevolucion = "00-00-2026";
+            this.fechaDevolucion = "30-10-2026";
             System.out.println("Préstamo finalizado.");
         }
     }

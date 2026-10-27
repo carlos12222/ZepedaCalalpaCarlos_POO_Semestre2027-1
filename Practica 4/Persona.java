@@ -2,9 +2,6 @@
     - Pérez Galindo Claudia
     -Zepeda Calalpa Carlos
 
-    Falta ver que no acepte valores negativos en los setters
-    Comentar
-    revisa nombres de las clases
 -----------------------------------
 Funcionamiento general
 
@@ -58,4 +55,3 @@ public abstract class Persona {
     }
 
 }
-
