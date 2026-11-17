@@ -8,7 +8,7 @@ Funcionamiento general
     de los préstamos
 */
 
-public class Main {
+public class Main{
 
     // Declaracion de métodos -----------------------------------------------------------------
 

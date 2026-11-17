@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Main {
+public class Main1 {
     public static void main(String[] args) {
         //Hacemos un objeto de tipo scanner
         Scanner sc = new Scanner(System.in);
